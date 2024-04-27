@@ -11,8 +11,14 @@
 
 ### FrameBuffer
   - Container of all the `VkImageView`s which **represent** the attachments [defines which `VkImageView` is to be which attachment]
-  - When `vkCmdBeginRenderPass` is called at the start of command buffer recording, `vkRenderPassBeginInfo` requires both the FrameBuffers and RenderPass objects
+  - When `vkCmdBeginRenderPass` is called at the start of command buffer recording, `vkRenderPassBeginInfo` requires both the FrameBuffers and RenderPass objects [the `VkFramebuffer` in conjunction with the `VkRenderPass` define the render target]
 
+### RenderPass
+ - *RenderPass*: a chunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later; it defines which attachments will be drawn into.
+
+  - *Subpass*: rendering operations that depend on the contents of framebuffers in previous passes (e.g a sequence of post-processing effects). Using subpasses instead of multiple renderpasses allows for operations to be re-ordered and for memory bandwidth to be *potentially* conserved
+
+  - *Subpass dependencies*: describes the execution order between subpasses, forming a dependency DAG (logically equiv. to pipeline barrier between 2 subpasses). Otherwise, subpasses are asynchronous.
 
 ### Buffers, Images, & Memory
  - `VkDeviceMemory` represents actual memory allocated on the GPU
@@ -21,10 +27,6 @@
  - `VkImageView` defines which part of a `VkImage` to use
 
 ### Misc. Definitions
-  - *RenderPass*: a chunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later; it defines which attachments will be drawn into. Note that the `VkFramebuffer` in conjunction with the `VkRenderPass` define the render target
-    
   - *Attachment*: *only* a description of needed frame image outputs and temporaries (no underlying memory)
 
-  - *Subpass*: rendering operations that depend on the contents of framebuffers in previous passes (e.g a sequence of post-processing effects). Using subpasses instead of multiple renderpasses allows for operations to be re-ordered and for memory bandwidth to be *potentially* conserved
-
-  - *Subpass dependencies*: describes the execution order between subpasses, forming a dependency DAG (logically equiv. to pipeline barrier between 2 subpasses). Otherwise, subpasses are asynchronous.
+ 
