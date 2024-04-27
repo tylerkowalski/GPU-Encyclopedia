@@ -14,7 +14,7 @@
   - When `vkCmdBeginRenderPass` is called at the start of command buffer recording, `vkRenderPassBeginInfo` requires both the FrameBuffers and RenderPass objects [the `VkFramebuffer` in conjunction with the `VkRenderPass` define the render target]
 
 ### RenderPass
- - *RenderPass*: a chunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later; it defines which attachments will be drawn into.
+ - *RenderPass*: a chunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later; it defines the attachments that will be drawn into.
 
   - *Subpass*: rendering operations that depend on the contents of framebuffers in previous passes (e.g a sequence of post-processing effects). Using subpasses instead of multiple renderpasses allows for operations to be re-ordered and for memory bandwidth to be *potentially* conserved
 
