@@ -13,3 +13,6 @@
  - `VkDeviceMemory` represents actual memory allocated on the GPU
  - `VkBuffer` is a handle to a location within `VkDeviceMemory` (linear array of data)
  - `VkImage` is also a handle to a location with `VkDeviceMemory` (structured image data)
+
+### Misc. Definitions
+  - *Attachment*: description of resources used during rendering 
