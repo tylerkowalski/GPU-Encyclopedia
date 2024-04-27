@@ -9,15 +9,21 @@
 ### Fragment Shader
   - `layout(location = x)` output variable is associated *only* with colour attachments, defined in `VkRenderingInfo::pColorAttachments[x]`. Dynamic rendering uses a similar structure except it is set at command buffer recording as opposed to at pipeline creation (pipeline creation needs a RenderPass object if not using dynamic rendering)
 
+### FrameBuffer
+  - Container of all the `VkImageView`s which **represent** the attachments [defines which `VkImageView` is to be which attachment]
+  - When `vkCmdBeginRenderPass` is called at the start of command buffer recording, `vkRenderPassBeginInfo` requires both the FrameBuffers and RenderPass objects
+
+
 ### Buffers, Images, & Memory
  - `VkDeviceMemory` represents actual memory allocated on the GPU
- - `VkBuffer` is a handle to a location within `VkDeviceMemory` (linear array of data)
- - `VkImage` is also a handle to a location with `VkDeviceMemory` (structured image data)
+ - `VkBuffer` is a handle to a location within `VkDeviceMemory` and metadata (linear array of data)
+ - `VkImage` is also a handle to a location with `VkDeviceMemory` and metadata(structured image data)
+ - `VkImageView` defines which part of a `VkImage` to use
 
 ### Misc. Definitions
-  - *RenderPass*: the ultimate generalization of the vertex-rasterization workflow (renderpass can be implemeted in many ways with hardware, RenderPass objects abstracts this). The render pass object is a hunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later.
+  - *RenderPass*: a chunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later; it defines which attachments will be drawn into. Note that the `VkFramebuffer` in conjunction with the `VkRenderPass` define the render target
     
-  - *Attachment*: *only* a description of needed frame image outputs and temporaries (no underlying memory), used in RenderPass
+  - *Attachment*: *only* a description of needed frame image outputs and temporaries (no underlying memory)
 
   - *Subpass*: rendering operations that depend on the contents of framebuffers in previous passes (e.g a sequence of post-processing effects). Using subpasses instead of multiple renderpasses allows for operations to be re-ordered and for memory bandwidth to be *potentially* conserved
 
