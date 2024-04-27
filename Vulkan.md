@@ -27,6 +27,6 @@
  - `VkImageView` defines which part of a `VkImage` to use
 
 ### Misc. Definitions
-  - *Attachment*: *only* a description of needed frame image outputs and temporaries (no underlying memory)
+  - *Attachment*: *only* a description of needed frame image outputs and temporaries (no underlying memory) [*description* of a resource that is a result of rendering]
 
  
