@@ -8,3 +8,8 @@
 
 ### Fragment Shader
   - `layout(location = x)` output variable is associated *only* with colour attachments, defined in `VkRenderingInfo::pColorAttachments[x]`. Dynamic rendering uses a similar structure except it is set at command buffer recording as opposed to at pipeline creation (pipeline creation needs a RenderPass object if not using dynamic rendering)
+
+### Buffers, Images, & Memory
+ - `VkDeviceMemory` represents actual memory allocated on the GPU
+ - `VkBuffer` is a handle to a location within `VkDeviceMemory` (linear array of data)
+ - `VkImage` is also a handle to a location with `VkDeviceMemory` (structured image data)
