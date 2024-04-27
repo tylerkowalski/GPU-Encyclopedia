@@ -15,4 +15,11 @@
  - `VkImage` is also a handle to a location with `VkDeviceMemory` (structured image data)
 
 ### Misc. Definitions
-  - *Attachment*: description of resources used during rendering 
+Need more reading to fully understand...
+
+  - *RenderPass*: the ultimate generalization of the vertex-rasterization workflow (renderpass can be implemeted in many ways with hardware, RenderPass objects abstracts this). The render pass object is a hunk of metadata describing the outputs of a larger set of draw calls, similar to a C++ declaration for which you provide the implementation later.
+    
+  - *Attachment*: *only* a description of needed frame image outputs and temporaries (no underlying memory), used in RenderPass
+
+  - *Subpass*: a specific phase of rendering that reads and writes a subset of attachments in a RenderPass.
+  - *Subpass dependencies*: describes the execution order between subpasses, forming a dependency DAG (logically equiv. to pipeline barrier between 2 subpasses). Otherwise, subpasses are asynchronous.
