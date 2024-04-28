@@ -27,10 +27,10 @@
  - `VkImageView` defines which part of a `VkImage` to use
 
 ### Misc. Definitions
-  - *Attachment*: *description* of a resource that is a result of rendering [does **not** include descriptors, textures, samplers, and buffers]
+  - *Attachment*: *description* of a resource(frame image or temporary) that is a result of rendering [does **not** include descriptors, textures, samplers, and buffers]
       - *Input Attachment*: attachments that act as input and were, potentially, a render target of a previous subpass
       - [For more information]( https://stackoverflow.com/questions/46384007/what-is-the-meaning-of-attachment-when-speaking-about-the-vulkan-api)
         
-*Note that if no subpasses are used, attachments are descriptions of render targets, so for most use cases, attachments are descriptions of render targets*
+*Note that if no subpasses are used, attachments are just descriptions of render targets, so for most use cases, attachments are descriptions of render targets*
 
 
