@@ -43,3 +43,10 @@
 - Warp
   - The threads running in lockstep on a SM
   - Effectively the SIMD width of a SM, which is 32
+
+## Misc.
+- For devices of compute capability 2.x and up, the (theoretical) maximum number of blocks in a (launched) grid is 2^31 - 1 in x, and 65,535 for y & z. It is *highly* unlikely you will run into limitations with the grid size launched 
+- Modern GPUs (as of 2024) support a (theoretical) maximum of 2048 threads  (64 warps) per SM (excluding other constraints like registers / thread), and each thread block has a maximum of 1024 threads
+- The warp scheduler can switch between executing warps in 1 clock cycle
+- Thread blocks are "all-or-nothing" with regards to scheduling, allowing them to access memory local to the SM (e.g shared memory)
+- It is undefined when resources in a thread block are freed at warp granularity or not, however simple experimenting show this happens *sometimes*
