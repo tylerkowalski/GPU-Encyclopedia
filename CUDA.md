@@ -53,3 +53,6 @@
 - It is often best to add `f` to the end of floating point constants to prevent double precision arithmetic being done (can often be several times slower), since intermediate numbers like 1.23 are given the type `double`  (at least in C & C++)
   - GPUs are usually geared for single precision throughput, which means there are more single precision FPUs than double. Double precision also takes up more registers => less threads supported per SM, use more bandwidth, etc.
   - todo: find architectural design differences between single and double precision (etc cache heirarchy design) 
+  
+## GTC Talk Notes
+[Click here to go to notes on GTC talks on CUDA](CUDA_GTC.md)
