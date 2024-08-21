@@ -3,9 +3,9 @@
 [Click here to go back to the CUDA page](CUDA.md)
 
 ## Table of contents
-- [CUDA: New Features & Beyond](#cuda-new-features--beyond-081924)
+- [CUDA: New Features & Beyond 2024](#cuda-new-features--beyond-081924)
 
-## [CUDA: New Features & Beyond](https://www.nvidia.com/en-us/on-demand/session/gtc24-s62400/?playlistId=playList-180a791b-0239-4af2-824b-9e3e7d555a47) [08.19.24]
+## [CUDA: New Features & Beyond 2024](https://www.nvidia.com/en-us/on-demand/session/gtc24-s62400/?playlistId=playList-180a791b-0239-4af2-824b-9e3e7d555a47) [08.19.24]
 - Key-metric is accelerated computing is performance per. watt (not strictly performance)
   - Smaller transistors => fewer electrons needed, but has been scaling at a lesser rate than that of transistor density
 - From a software-perspective, power is spent primarily on 2 things:
