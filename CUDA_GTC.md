@@ -3,7 +3,8 @@
 [Click here to go back to the CUDA page](CUDA.md)
 
 ## Table of contents
-- [CUDA: New Features & Beyond 2024](#cuda-new-features--beyond-081924)
+- [CUDA: New Features & Beyond 2024](#cuda-new-features--beyond-2024-081924)
+- [How GPU Computing Works](#how-gpu-computing-works)
 
 ## [CUDA: New Features & Beyond 2024](https://www.nvidia.com/en-us/on-demand/session/gtc24-s62400/?playlistId=playList-180a791b-0239-4af2-824b-9e3e7d555a47) [08.19.24]
 - Key-metric is accelerated computing is performance per. watt (not strictly performance)
@@ -54,3 +55,6 @@
   - Is control flow dependency, which allows nodes like ***WHILE*** to be expressed (which data flow dependency would not allow)
   - General trend: getting the CPU to not be needed for hand-holding control -- reduces communication, reduces power, keeps GPU busy
   - Released in CUDA 12.4
+
+  ## [How GPU Computing Works](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31151/?playlistId=playList-77535510-ec26-488d-8506-f0e618dc1513)
+  - The nature of the hardware governs how you program GPUs (no suprise) 
