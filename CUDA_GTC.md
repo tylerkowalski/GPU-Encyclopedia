@@ -57,4 +57,9 @@
   - Released in CUDA 12.4
 
   ## [How GPU Computing Works](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31151/?playlistId=playList-77535510-ec26-488d-8506-f0e618dc1513)
-  - The nature of the hardware governs how you program GPUs (no suprise) 
+  - The nature of the hardware governs how you program GPUs (no surprise) 
+  - It really comes down to: *where's my data?*
+  - Nobody cares about FLOPs!
+    - Compute-intensity $=\frac{FLOPs}{Data rate}$, i.e *the amount of work the device needs to be doing to account for the fact that the memory can't feed it as fast as it needs to be fed*
+      - Dimensional analysis: $\frac{FP op.}{second}\div\frac{bytes}{second}=\frac{FP op.}{byte}$=compute intensity
+      - $compute\_intensity\times data\_rate = \frac{FP op}{byte}\times\frac{bytes}{second}=\frac{FP op.}{second}$, so if we use this compute intensity with the given data rate, we would be doing exactly the given FLOPs
