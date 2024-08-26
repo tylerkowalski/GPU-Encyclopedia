@@ -13,6 +13,8 @@
 ### String Manipulation
 - ```std::stoi``` -> converts a string to an integer
 - String streams can be implictly converted into a boolean based upon their state
+- String streams have a ```read``` method that takes as arguments a ```char*``` and num chars to read, allowing you to read from a string stream at the granularity of characters
+- String constructor is overloaded for C-style strings (array of chars and null-terminated)
 
 ## Misc. Definitions
 - `std::move` -> casts to an r-value reference, that is all!
