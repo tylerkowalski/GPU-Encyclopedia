@@ -18,3 +18,4 @@
   - `pattern...` is parameter pack expansion, which expands the pattern to 0 or more patterns (at the pattern must contain at least 1 parameter pack)
 - Variadic template -> a template with at least 1 parameter pack
 - ```std::back_insert_iterator``` -> output iterator that calls the containers ```push_back``` member function whenever the iterator is assigned to
+- ```std::stoi``` -> converts a string to an integer

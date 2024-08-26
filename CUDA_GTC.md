@@ -56,10 +56,18 @@
   - General trend: getting the CPU to not be needed for hand-holding control -- reduces communication, reduces power, keeps GPU busy
   - Released in CUDA 12.4
 
-  ## [How GPU Computing Works](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31151/?playlistId=playList-77535510-ec26-488d-8506-f0e618dc1513)
+## [How GPU Computing Works](https://www.nvidia.com/en-us/on-demand/session/gtcspring21-s31151/?playlistId=playList-77535510-ec26-488d-8506-f0e618dc1513)
   - The nature of the hardware governs how you program GPUs (no surprise) 
   - It really comes down to: *where's my data?*
   - Nobody cares about FLOPs!
     - Compute-intensity $=\frac{FLOPs}{Data rate}$, i.e *the amount of work the device needs to be doing to account for the fact that the memory can't feed it as fast as it needs to be fed*
       - Dimensional analysis: $\frac{FP op.}{second}\div\frac{bytes}{second}=\frac{FP op.}{byte}$=compute intensity
-      - $compute\_intensity\times data\_rate = \frac{FP op}{byte}\times\frac{bytes}{second}=\frac{FP op.}{second}$, so if we use this compute intensity with the given data rate, we would be doing exactly the given FLOPs
+      - $compute\_intensity\times data\_rate = \frac{FP op}{byte}\times\frac{bytes}{second}=\frac{FP op.}{second}$, so if we use this compute intensity with the given data rate, we have the same FLOP/s fed to the processor as the FLOP/s that the processor can process
+      - Note the overloaded "meaning" of FLOPs to refer to "fed" or "computed" 
+    - "Dirty secret of computing" -> every generation, you can add FLOPs faster than you can add memory bandwidth (which means the compute intensity rises up)
+    - Interestingly enough, most chips (CPU & GPU) have similar compute intensity
+  - The vast majority of programs are memory bandwidth limited mode, so we should really be caring about memory bandwidth rather than FLOPs
+  - We also need to consider latency:
+    - Side-note: FMA instruction (fused-multiple-add) does $\alpha X + Y=Z$ in a single instruction
+    - "Loads that I have to wait for counterbalanced against the FLOPs I need to do to cover the time I spent loading it", so we don't care about time for stores in our analysis of DAXPY
+    - 
