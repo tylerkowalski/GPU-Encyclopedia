@@ -10,7 +10,11 @@
 ### Templates
 - TODO: add information about how templated methods need "template dot" syntax due to compiler parsing issues 
 
-## Definitions
+### String Manipulation
+- ```std::stoi``` -> converts a string to an integer
+- String streams can be implictly converted into a boolean based upon their state
+
+## Misc. Definitions
 - `std::move` -> casts to an r-value reference, that is all!
 - Parameter pack -> Either a template/function parameter pack depending on when used, they are single parameters which hold 0 or more typed/untyped/template parameters 
   - Syntax is usually `typename/type(like int)t /class ... packname(optional)` for declaring the pack in a template
@@ -18,4 +22,3 @@
   - `pattern...` is parameter pack expansion, which expands the pattern to 0 or more patterns (at the pattern must contain at least 1 parameter pack)
 - Variadic template -> a template with at least 1 parameter pack
 - ```std::back_insert_iterator``` -> output iterator that calls the containers ```push_back``` member function whenever the iterator is assigned to
-- ```std::stoi``` -> converts a string to an integer
