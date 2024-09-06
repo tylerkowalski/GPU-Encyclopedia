@@ -18,6 +18,14 @@
 
 ### STL
 - ```std::vector``` has a constructor overload which takes in a ```size_t``` to pre-allocate the size necessary
+- ```std::vector::resize``` takes a count and a value (overloaded such that the value type is optional) which will create copies of ```value``` whenever the size has been increased
+  - Useful for multi-dimensional vectors!
+
+### Optimization
+- If you **don't** use a ```constexpr``` as an L-value, it **will** be optimized out, as will ```static constexpr```. However, they are not equivalent if used as an L-value:
+  - ```static``` puts the data in ```.rodata``` (read-only) segment but non-static will have fields on the stack
+  - Potential performance penalty to have to initialize the structure each time
+  - Tldr; ```static constexpr``` is almost always preferred
 
 
 ## Misc. Definitions
