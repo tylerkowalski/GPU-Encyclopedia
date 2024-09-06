@@ -15,6 +15,7 @@
 - String streams can be implictly converted into a boolean based upon their state
 - String streams have a ```read``` method that takes as arguments a ```char*``` and num chars to read, allowing you to read from a string stream at the granularity of characters
 - String constructor is overloaded for C-style strings (array of chars and null-terminated)
+- ```tolower``` converts a character to lowercase according to the C locale if it exists. Otherwise, it is left unchanged. The function returns an integer which is the corresponding ASCII number
 
 ### STL
 - ```std::vector``` has a constructor overload which takes in a ```size_t``` to pre-allocate the size necessary
