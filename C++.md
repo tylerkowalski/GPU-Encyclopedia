@@ -16,6 +16,10 @@
 - String streams have a ```read``` method that takes as arguments a ```char*``` and num chars to read, allowing you to read from a string stream at the granularity of characters
 - String constructor is overloaded for C-style strings (array of chars and null-terminated)
 
+### STL
+- ```std::vector``` has a constructor overload which takes in a ```size_t``` to pre-allocate the size necessary
+
+
 ## Misc. Definitions
 - `std::move` -> casts to an r-value reference, that is all!
 - Parameter pack -> Either a template/function parameter pack depending on when used, they are single parameters which hold 0 or more typed/untyped/template parameters 
