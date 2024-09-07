@@ -16,11 +16,12 @@
 - String streams have a ```read``` method that takes as arguments a ```char*``` and num chars to read, allowing you to read from a string stream at the granularity of characters
 - String constructor is overloaded for C-style strings (array of chars and null-terminated)
 - ```tolower``` converts a character to lowercase according to the C locale if it exists. Otherwise, it is left unchanged. The function returns an integer which is the corresponding ASCII number
-- ```isalnum``` takes an integer corresponding to an ASCII number and returns a non-zero value if it is alphanumeric, as is defined by the C locale
+- ```std::isalnum``` takes an integer corresponding to an ASCII number and returns a non-zero value if it is alphanumeric, as is defined by the C locale
+- ```std::string``` has access and modifier member functions that can make it be treated like a stack of chars
 
 ### STL
 - ```std::vector``` has a constructor overload which takes in a ```size_t``` to pre-allocate the size necessary
-- ```std::vector::resize``` takes a count and a value (overloaded such that the value type is optional) which will create copies of ```value``` whenever the size has been increased
+- ```std::vector::resize``` and ```std::vector``` has a constructor that takes a count and a value (overloaded such that the value type is optional) which will create copies of ```value``` wherever the size has been increased (or in the case of ```std::vector``` construction, creates copies of ```value``` for all fields in initialization)
   - Useful for multi-dimensional vectors!
 
 ### Optimization
