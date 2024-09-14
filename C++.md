@@ -18,6 +18,7 @@
 - ```tolower``` converts a character to lowercase according to the C locale if it exists. Otherwise, it is left unchanged. The function returns an integer which is the corresponding ASCII number
 - ```std::isalnum``` takes an integer corresponding to an ASCII number and returns a non-zero value if it is alphanumeric, as is defined by the C locale
 - ```std::string``` has access and modifier member functions that can make it be treated like a stack of chars
+- ```(std::string).substr(size_type pos, size_type count)``` is a method on a string that returns the substring of a string, starting at ```pos``` with ```count``` characters
 
 ### STL
 - ```std::vector``` has a constructor overload which takes in a ```size_t``` to pre-allocate the size necessary
