@@ -25,7 +25,7 @@
 - ```std::vector::resize``` and ```std::vector``` has a constructor that takes a count and a value (overloaded such that the value type is optional) which will create copies of ```value``` wherever the size has been increased (or in the case of ```std::vector``` construction, creates copies of ```value``` for all fields in initialization)
   - Useful for multi-dimensional vectors!
 - ```std::unordered_map``` will default construct an element into the container if you try to compare against a value indexed by a key that is not in the unordered_map
-- ```std::max_element(ForwardIt first, ForwardIt last)``` provides an STL function to find the max in a given range
+- ```std::max_element(ForwardIt first, ForwardIt last)``` provides an STL function to find the max in a given range. The return value is an iterator.
 
 ### Optimization
 - If you **don't** use a ```constexpr``` as an L-value, it **will** be optimized out, as will ```static constexpr```. However, they are not equivalent if used as an L-value:
