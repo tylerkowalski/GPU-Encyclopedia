@@ -33,6 +33,9 @@
   - Potential performance penalty to have to initialize the structure each time
   - Tldr; ```static constexpr``` is almost always preferred
 
+### Arithmetic
+- ```size_t``` is unsigned, so if you compare a negative integer and a ```size_t```, the negative number will be implicitly converted to the corresponding unsigned 2's complement number (very big)
+
 
 ## Misc. Definitions
 - `std::move` -> casts to an r-value reference, that is all!
