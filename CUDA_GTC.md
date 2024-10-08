@@ -66,8 +66,17 @@
       - Note the overloaded "meaning" of FLOPs to refer to "fed" or "computed" 
     - "Dirty secret of computing" -> every generation, you can add FLOPs faster than you can add memory bandwidth (which means the compute intensity rises up)
     - Interestingly enough, most chips (CPU & GPU) have similar compute intensity
+    - Goal for hardware design is always to keep the compute intensity low, because not many algorithms can do that many operations per byte loaded
   - The vast majority of programs are memory bandwidth limited mode, so we should really be caring about memory bandwidth rather than FLOPs
   - We also need to consider latency:
-    - Side-note: FMA instruction (fused-multiple-add) does $\alpha X + Y=Z$ in a single instruction
+    - Side-note: FMA instruction (fused-multiply-add) does $\alpha X + Y=Z$ in a single instruction
     - "Loads that I have to wait for counterbalanced against the FLOPs I need to do to cover the time I spent loading it", so we don't care about time for stores in our analysis of DAXPY
-    - 
+- Pipelining -> when we have extra memory operations under way, but they are hidden behind extra useful work 
+  - Basically the key-tool of programming--compilers spend most of their energy trying to ensure this
+- Latency is actually bounded by the laws of physics
+  - Clock frequency is so high that even light doesnt actually travel that far in 1 clock cycle
+  - Problem isn't actually distance though, it's because signals are handed from 1 bank of transitors to the next, switching on/off at the clock rate
+    - Depth of the transistor pipelines is the bigger factor
+- If we want the memory bus to be fully utilized, then we need data transfers to fill an entire memory latency period
+  - If this isn't happening, then we are latency-bound
+- KEY-TAKEAWAY: the gpu has a lot of threads, far more than you need, because it is designed for oversubscription. It is designed to have a ton of threads working, so that if some are waiting on memory, there are plently more left to be active
