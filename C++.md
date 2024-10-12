@@ -36,6 +36,9 @@
 
 ### Arithmetic
 - ```size_t``` is unsigned, so if you compare a negative integer and a ```size_t```, the negative number will be implicitly converted to the corresponding unsigned 2's complement number (very big)
+- The % operator is **not** the "modulo operator", but actually the "division remainder operator". It conforms to the following equality:
+  - For $b !=0$, we have $\frac{a}{b}\times b + a\%b = a$ 
+  - This is particularly important when dealing with negative numbers!
 
 
 ## Misc. Definitions
