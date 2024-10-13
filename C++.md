@@ -28,6 +28,9 @@
 - ```std::max_element(ForwardIt first, ForwardIt last)``` provides an STL function to find the max in a given range. The return value is an iterator.
 - When calling ```std::sort```, if you are providing a custom comparator, it must be a **strict order**! Otherwise, the sorting algorithm may go into an infinite recursion
 
+### Exceptions
+- ```std::runtime_error``` is a derived class of ```std::exception``` which has constructors for ```char*``` and ```std::string``` such that the ```.what()``` method returns that string
+
 ### Optimization
 - If you **don't** use a ```constexpr``` as an L-value, it **will** be optimized out, as will ```static constexpr```. However, they are not equivalent if used as an L-value:
   - ```static``` puts the data in ```.rodata``` (read-only) segment but non-static will have fields on the stack
