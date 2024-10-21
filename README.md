@@ -6,6 +6,7 @@ Included as well is tylerBLAS & tylerDNN, which are subsets of cuBLAS & cuDNN. T
 
 ## Collection of Resources
 - [CUDA](CUDA.md)
+- [TensorRT](TensorRT.md)
 - [C++](C++.md)
 - [GLSL](GLSL.md)
 - [Vulkan](Vulkan.md)
