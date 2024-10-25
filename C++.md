@@ -27,6 +27,9 @@
 - ```std::unordered_map``` will default construct an element into the container if you try to compare against a value indexed by a key that is not in the unordered_map
 - ```std::max_element(ForwardIt first, ForwardIt last)``` provides an STL function to find the max in a given range. The return value is an iterator.
 - When calling ```std::sort```, if you are providing a custom comparator, it must be a **strict order**! Otherwise, the sorting algorithm may go into an infinite recursion
+- ```std::algorithm``` provides ```find(beginIt, endIt, val)``` that returns an iterator to the position with val if it exists, otherwise endIt 
+  - it searches the range of [beginIt, endIt)
+- ```std::vector``` has a constructor that takes elements from [beginIt, endIt)
 
 ### Exceptions
 - ```std::runtime_error``` is a derived class of ```std::exception``` which has constructors for ```char*``` and ```std::string``` such that the ```.what()``` method returns that string
