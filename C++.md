@@ -30,6 +30,10 @@
 - ```std::algorithm``` provides ```find(beginIt, endIt, val)``` that returns an iterator to the position with val if it exists, otherwise endIt 
   - it searches the range of [beginIt, endIt)
 - ```std::vector``` has a constructor that takes elements from [beginIt, endIt)
+- Container adaptor -> provides a different interface for a sequential container
+- ```std::priority_queue``` is a container adaptor that defaults to using ```std::vector``` as the container
+  - By default, ```std::priority_queue``` is a **max heap** since the compare given is ```std::less<T>```. Can form a min heap by giving a different comparator such as ```std::greater<T>```, but because of optional arguments, you will also need to be explict about the container then!
+    - Be cognizant of the counter-intuitive fact that ```std::less<T>``` actually gives a max-heap!
 
 ### Exceptions
 - ```std::runtime_error``` is a derived class of ```std::exception``` which has constructors for ```char*``` and ```std::string``` such that the ```.what()``` method returns that string
