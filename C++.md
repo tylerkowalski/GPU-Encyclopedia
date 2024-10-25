@@ -42,6 +42,8 @@
 - The % operator is **not** the "modulo operator", but actually the "division remainder operator". It conforms to the following equality:
   - For $b !=0$, we have $\frac{a}{b}\times b + a\%b = a$ 
   - This is particularly important when dealing with negative numbers!
+- Many types in C/C++ are platform specific (i.e ```int``` can be represented as anything, so long as it is at least 16 bits), however it is most often represented as the word size of the processor (for the sake of speed)
+  - If you need to deal with the exact number of bits, you should use ```cstdint``` that defines types with an explicit number of bits (e.g ```uint32_t```)
 
 
 ## Misc. Definitions
