@@ -34,6 +34,7 @@
 - ```std::priority_queue``` is a container adaptor that defaults to using ```std::vector``` as the container
   - By default, ```std::priority_queue``` is a **max heap** since the compare given is ```std::less<T>```. Can form a min heap by giving a different comparator such as ```std::greater<T>```, but because of optional arguments, you will also need to be explict about the container then!
     - Be cognizant of the counter-intuitive fact that ```std::less<T>``` actually gives a max-heap!
+    - Easiest to construct one by using the 2 argument construct which takes a start and end iterator of some container
 
 ### Exceptions
 - ```std::runtime_error``` is a derived class of ```std::exception``` which has constructors for ```char*``` and ```std::string``` such that the ```.what()``` method returns that string
